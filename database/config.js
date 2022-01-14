@@ -1,14 +1,20 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-
-const dbConnection = async () => {
+const dbConnection = async() => {
 
     try {
-        await mongoose.connect('mongodb://127.0.0.1:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false');
+        await mongoose.connect(process.env.DB_CONNECTION_URL);
 
+        console.log('db connection succesfully');
     } catch (error) {
         console.log(error);
         throw new Error('Error de conexion en la base de datos');
     }
 
+}
+
+
+module.exports = {
+    dbConnection
 }
