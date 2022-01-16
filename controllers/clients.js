@@ -11,8 +11,8 @@ const getClients = async(req, res) => {
 };
 
 const addClients = async(req, res = response) => {
-
     const { email } = req.body;
+
     try {
         console.log(req.body.email);
         const existeEmail = await Clients.findOne({ email });
@@ -20,8 +20,8 @@ const addClients = async(req, res = response) => {
         if (existeEmail) {
             return res.status(400).json({
                 ok: false,
-                msg: 'El cliente ya esta dado de alta'
-            })
+                msg: "El cliente ya esta dado de alta",
+            });
         }
         const clients = new Clients(req.body);
 

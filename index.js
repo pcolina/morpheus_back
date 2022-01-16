@@ -24,6 +24,8 @@ app.get('/', (req, res) => {
 });
 
 // Rutas
+app.use('/api/login', require('./routes/auth'));
+app.use('/api/users', require('./routes/users'));
 app.use('/api/clients', require('./routes/clients'));
 
 

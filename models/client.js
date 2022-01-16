@@ -15,6 +15,14 @@ const ClientSchema = Schema({
         type: String,
         required: true,
     },
+    document_type: {
+        type: String,
+        required: true,
+    },
+    document_number: {
+        type: String,
+        required: true,
+    },
     email: {
         type: String,
         required: true,
