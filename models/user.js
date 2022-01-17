@@ -1,11 +1,9 @@
 const { Schema, model } = require('mongoose');
 
 const UserSchema = Schema({
-
-    id: {
-        type: Number,
+    nick: {
+        type: String,
         required: true,
-        unique: true,
     },
     name: {
         type: String,
@@ -28,6 +26,26 @@ const UserSchema = Schema({
     role: {
         type: String,
         required: true,
+    },
+    status: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    createdAt: {
+        type: Date,
+        required: true
+    },
+    modifiedAt: {
+        type: Date,
+        required: true
+    },
+    mustChangePass: {
+        type: Boolean,
+        required: true
+    },
+    image: {
+        type: String,
     },
 
 });

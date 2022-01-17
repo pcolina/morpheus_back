@@ -11,7 +11,6 @@ const { check } = require('express-validator');
 
 router.get('/', jwtValidator, getUsers);
 router.post('/', [
-        jwtValidator,
         check('name', 'The field name is mandatory').not().isEmpty(),
         check('email').isEmail(),
         check('password', 'The field password is mandatory').not().isEmpty(),
